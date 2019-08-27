@@ -1,0 +1,12 @@
+[submodule "llvm-project"]
+	path = llvm-project
+	url = git@github.com:llvm/llvm-project.git
+[submodule "rocket-tools"]
+	path = rocket-tools
+	url = git@github.com:freechipsproject/rocket-tools.git
+[submodule "onnx"]
+	path = onnx
+	url = git@github.com:onnx/onnx.git
+[submodule "Halide"]
+	path = Halide
+	url = git@github.com:halide/Halide.git
