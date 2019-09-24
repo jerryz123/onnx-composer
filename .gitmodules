@@ -10,3 +10,6 @@
 [submodule "Halide"]
 	path = Halide
 	url = git@github.com:halide/Halide.git
+[submodule "onnx-halide"]
+	path = onnx-halide
+	url = git@github.com:jerryz123/onnx-halide.git
