@@ -5,7 +5,8 @@ set -o pipefail
 
 
 # Build riscv tools
-(cd rocket-tools && ./build.sh)
+(cd rocket-tools && git apply ../scripts/build.patch &&
+                    ./build.sh)
 
 # Build LLVM
 (cd llvm-project && mkdir -p build && cd build && \
@@ -23,10 +24,10 @@ set -o pipefail
 (cd llvm-project/build && make -j16 install)
 
 # Build Halide
-(cd Halide && make -j16 install PREFIX=$RISCV)
+(cd Halide && make -j16 distrib PREFIX=$RISCV)
 
 # Install python dependencies
-python3 -m pip install numpy protobuf
+python3 -m pip install numpy protobuf pytest
 
 # Build onnx
 (cd onnx && git submodule update --init --recursive && \
