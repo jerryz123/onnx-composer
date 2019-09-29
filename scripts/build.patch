@@ -1,8 +1,8 @@
 diff --git a/build.sh b/build.sh
-index 9aa80b6..5544099 100755
+index 9aa80b6..98cdfc2 100755
 --- a/build.sh
 +++ b/build.sh
-@@ -18,8 +18,8 @@ check_version automake 1.14 "OpenOCD build"
+@@ -18,8 +18,9 @@ check_version automake 1.14 "OpenOCD build"
  check_version autoconf 2.64 "OpenOCD build"
  build_project riscv-openocd --prefix=$RISCV --enable-remote-bitbang --enable-jtag_vpi --disable-werror
  
@@ -10,6 +10,7 @@ index 9aa80b6..5544099 100755
 -build_project riscv-gnu-toolchain --prefix=$RISCV
 +build_project riscv-isa-sim --prefix=$RISCV --with-abi=lp64
 +build_project riscv-gnu-toolchain --prefix=$RISCV --with-abi=lp64
++(cd riscv-gnu-toolchain/build && make linux && make install)
  CC= CXX= build_project riscv-pk --prefix=$RISCV --host=riscv64-unknown-elf
  build_project riscv-tests --prefix=$RISCV/riscv64-unknown-elf
  
