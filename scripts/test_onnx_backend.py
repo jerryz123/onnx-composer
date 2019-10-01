@@ -23,7 +23,6 @@ backend_test.exclude(r'test_[a-z,_]*rnn_[a-z,_]*')
 # No support for reshaping yet
 backend_test.exclude(r'test_(operator_|)expand_[a-z,_]*')
 backend_test.exclude(r'test_(operator_|)tile_[a-z,_]*')
-backend_test.exclude(r'test_reshape_[a-z,_]*')
 backend_test.exclude(r'test_PixelShuffle[a-z,_]*')
 
 # TODO support these

@@ -24,7 +24,7 @@ set -o pipefail
 (cd llvm-project/build && make -j16 install)
 
 # Build Halide
-(cd Halide && make -j16 distrib PREFIX=$RISCV)
+(cd Halide && make -j16 install PREFIX=$RISCV)
 
 # Install python dependencies
 python3 -m pip install numpy protobuf pytest
